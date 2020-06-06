@@ -14,8 +14,8 @@
     height: 450px;
 }
 
-h1,h2,h3 {
-  font-family: Impact, "Jazz LET", fantasy;
+html {
+  font-family: Palatino, "Palatino LT STD", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 h1 {
