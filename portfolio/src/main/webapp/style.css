@@ -10,4 +10,14 @@
     max-height: 100%;
     display: block; /* remove extra space below image */
     margin-top: 10px;
+    width: 450px;
+    height: 450px;
 }
+
+h1,h2,h3 {
+  font-family: Impact, "Jazz LET", fantasy;
+}
+
+h1 {
+    color:#4682B4
+    }
