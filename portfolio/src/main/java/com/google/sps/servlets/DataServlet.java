@@ -29,18 +29,16 @@ public class DataServlet extends HttpServlet {
   @Override
   public void init() {
     messages = new ArrayList<String>();
-    messages.add(
-        "A ship in port is safe, but that is not what ships are for. "
-            + "Sail out to sea and do new things. - Grace Hopper");
-    messages.add("They told me computers could only do arithmetic. - Grace Hopper");
-    messages.add("A ship in port is safe, but that's not what ships are built for. - Grace Hopper");
+    messages.add("A");
+    messages.add("B");
+    messages.add("C");
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String json = convertToJson(messages);
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Cedric!</h1>");
+    // response.setContentType("text/html;");
+    // response.getWriter().println("<h1>Hello Cedric!</h1>");
 
     response.setContentType("application/json;");
     response.getWriter().println(json);
@@ -49,16 +47,16 @@ public class DataServlet extends HttpServlet {
   /**
    * Converts a ServerStats instance into a JSON string using manual String concatentation.
    */
-    private String convertToJson(ArrayList messages) {
+    private String convertToJson(ArrayList<String> messages) {
         String json = "{";
-        json += "\"1\": ";
+        json += "\"message_1\": ";
         json += "\"" + messages.get(0) + "\"";
         json += ", ";
-        json += "\"2\": ";
+        json += "\"message_2\": ";
         json += "\"" + messages.get(1) + "\"";
         json += ", ";
-        json += "\"3\": ";
-        json += messages.get(2);
+        json += "\"message_3\": ";
+        json += "\"" + messages.get(2) + "\"";
         json += "}";
         return json;
   }
