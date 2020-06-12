@@ -13,6 +13,10 @@
 // limitations under the License.
 
 package com.google.sps.servlets;
+
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +56,12 @@ public class DataServlet extends HttpServlet {
       response.getWriter().println("Please enter a comment that is non-empty and longer than 3 characters.");
       return;
     }
+
+    // Store Comment entity
+    Entity commentEntity = new Entity("Comment");
+    commentEntity.setProperty("comment", userComment);
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(commentEntity);
 
     history.add(userComment);
 
