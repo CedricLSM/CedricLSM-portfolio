@@ -17,6 +17,8 @@ package com.google.sps.servlets;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,9 +41,22 @@ public class DataServlet extends HttpServlet {
     // response.getWriter().println("<h1>Hello Cedric!</h1>");
     // String json = convertToJson(history);
 
-    response.setContentType("application/json;");
-    String json = new Gson().toJson(history);
+    // New Query instance to load Comment entity
+    Query query = new Query("Comment");
 
+    // Initialise datastore and pass query into datastore.prepare() function
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+
+    // Loop over entities using asIterable() function
+    List<String> hist = new ArrayList<>();
+    for (Entity entity : results.asIterable()) {
+      String comment = (String) entity.getProperty("comment");
+      hist.add(comment);
+    }
+
+    response.setContentType("application/json;");
+    String json = new Gson().toJson(tasks);
     response.getWriter().println(json);
   }
 
