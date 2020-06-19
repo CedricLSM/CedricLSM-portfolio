@@ -9,16 +9,14 @@
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
     <script src="script.js"></script>
-
-
   </head>
 
 <body onload="getComments()">
 <div class="container demo">
-    <div class="content">
-    <div id="large-header" class="large-header">
-        <canvas id="demo-canvas"></canvas>
-        <!-- <h1 class="main-title"><span class="thin">Explore</span> Space</h1> -->
+<div class="content">
+<div id="large-header" class="large-header">
+<canvas id="demo-canvas"></canvas>
+
 <div class="box">
     <!-- <img src="ced.jpg" alt="" class="box-img"> -->
     <h1>Cedric Lee</h1>
@@ -34,37 +32,43 @@
     </ul>
 </div>
 
+<div id="projects">
+    <h1>Projects</h1>
+    <h2>To be added!</h2>
+</div>
+<div id="random">
+    <h1>SPS-Related!</h1>
+    <h2>In this section, I display some of the stuffs I have been learning from my time at SPS!</h2>
+    <h3>Personal Interests</h3>
+    <p>
+        I am interested in weightlifting and watching NBA matches! Really love travelling as well, do click the below
+        button to view random photos that I took while travelling in previous years.
+        <p>Click <button onclick="randomizeImage()">here!</button></p>
+        <div id="random-image-container"></div>
+    </p>
 
-      <h1>Personal Interests</h1>
-        <p>
-            I am interested in weightlifting and watching NBA matches! Really love travelling as well, do click the below
-            button to view random photos that I took while travelling in previous years.
-            <p>Click <button onclick="randomizeImage()">here!</button></p>
-            <div id="random-image-container"></div>
-        </p>
+    <div id="content">
+    <h3>Random Quotes</h3>
+    <p>Click here to see a random quote:</p>
+    <button onclick="getRandomQuoteUsingAsyncAwait()">Fetch a quote!</button>
+    <div id="quote-container"></div>
+    </div>
 
-      <div id="content">
-        <h1>Random Quotes</h1>
-        <p>Click here to see a random quote:</p>
-        <button onclick="getRandomQuoteUsingAsyncAwait()">Fetch a quote!</button>
-        <div id="quote-container"></div>
-      </div>
+    <h3>Here are some messages for you</h3>
+    <p>Click on the button to receive it:</p>
+    <button onclick="getMessages()">Click Me!</button>
+    <ul id="messages-container"></ul>
 
-      <h1>Here are some messages for you</h1>
-      <p>Click on the button to receive it:</p>
-      <button onclick="getMessages()">Click Me!</button>
-      <ul id="messages-container"></ul>
+    <form action="/data" method="POST">
+    <p><h3>Leave a message:</h3></p>
+    <input type="text" name="user-comment">
+    <br/><br/>
+    <input type="submit" />
+    </form>
 
-      <form action="/data" method="POST">
-        <p><h1>Leave a message:</h1></p>
-        <input type="text" name="user-comment">
-        <br/><br/>
-        <input type="submit" />
-      </form>
+    <ul id="history"></ul>
 
-      <ul id="history"></ul>
-
-    <h1>Translation</h1>
+    <h3>Translation</h3>
     <p>Type a message and select a language, then click submit to translate it.</p>
 
     <textarea id="text"></textarea>
@@ -81,8 +85,8 @@
     <div id="result"></div>
     </div>
 
-    </div>
-    </div>
-    </div>
-  </body>
+</div>
+</div>
+</div>
+</body>
 </html>
