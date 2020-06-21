@@ -13,11 +13,48 @@
 // limitations under the License.
 
 package com.google.sps;
-
+import java.util.Comparator;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public final class FindMeetingQuery {
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    throw new UnsupportedOperationException("TODO: Implement this method.");
+      ArrayList<TimeRange> requiredAttendees = new ArrayList<TimeRange>();
+      ArrayList<TimeRange> busyTimeSlots = new ArrayList<TimeRange>();
+      //Get TimeRange of all attendees required for the meeting request
+      for (Event event : events) {
+          for (String e : event.getAttendees()) {
+              if (request.getAttendees().contains(e)) {
+                  requiredAttendees.add(event.getWhen());
+              }
+          }
+      }
+      // Sort TimeRange by start time
+      Collections.sort(requiredAttendees,TimeRange.ORDER_BY_START);
+
+      //
+      busyTimeSlots.add(requiredAttendees.get(0));
+      // Loop through the busy Timerange of every attendee, starting from second attendee
+      // compares start time of attendee B with end of attendee A (after sorting by start time)
+      // If start time of B <= end time of A && end time of B > end time of A:
+        //Set or replace the last index of busyTimeSlots arraylist with a new TimeRange whereby
+        // the new start time is start time of attendee A and the new end time is end time of attendee B
+      for (int i=1; i < requiredAttendees.size(); i++) {
+          if (requiredAttendees.get(i).start() <= busyTimeSlots.get(busyTimeSlots.size()-1).end()) {
+              if (requiredAttendees.get(i).end() > busyTimeSlots.get(busyTimeSlots.size()-1).end()) {
+                  TimeRange tmp = busyTimeSlots.get(busyTimeSlots.size()-1);
+                  busyTimeSlots.set(busyTimeSlots.size()-1, tmp.fromStartEnd(tmp.start(),requiredAttendees.get(i).end(),true));
+              }
+          } else {
+              busyTimeSlots.add(requiredAttendees.get(i));
+          }
+      }
+      return busyTimeSlots;
+      //TODO: Based on the busyTimeSlots of attendees, determine pockets of available time
+      //whereby I can schedule the requested meeting
   }
 }
