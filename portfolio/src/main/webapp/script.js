@@ -30,3 +30,9 @@ function randomizeImage() {
   imageContainer.innerHTML = '';
   imageContainer.appendChild(imgElement);
 }
+
+async function getRandomQuoteUsingAsyncAwait() {
+  const response = await fetch('/random-quote');
+  const quote = await response.text();
+  document.getElementById('quote-container').innerText = quote;
+}
