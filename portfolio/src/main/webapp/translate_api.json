@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cshaoming-sps-summer20",
+  "private_key_id": "2df8ec4a4840273b21a9e028dda0278fc19a8a44",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8kaoIsNwroWIk\nvZbHph7QBjP7cgADnnYrG9F2fPlErRoHRB6fw6FY9HgoOC86qmAcUjgla9Lcm/0A\n8j6yODeOPJ+IbO/vjhSCfsC2J7JOmqI+xCaIKMh8E/xi9e8Yyx9scbUkSGvuMNF8\n9If3W8RJWKHAvoVHa7y9rhugkXZwiuVUOXeyPcIf76L6NTvtUy0O6H6zTOToN9FR\ngZHXcUOagXQIE5miZksQF82f76uPNEpK+hZg397NM+yS1RgwrCBpOcpnyYbq9+AH\nC/QarC3l53u5//BACPO23Jc2N9+EtaOP4jHxIcGFB7/qRTLXLAzUub2u2UI+xzNJ\nxQF+JRi5AgMBAAECggEANLHX/DnALQkaLf41BnGrpqI1II0I5/n+N6m8bQobdk+R\nOHqWvDqk+gDHGyYoPJKj7QYk3oA1GqUUnJEVaCRBkiPqyOr4Wc8weA8Ht198em7H\n7BZQVjhfXh0PqG/lct5AV8OmxQ7f6l4GDI8g98TTI1P7T6tt/zliMvdWjRZZLLWI\nDnUdQFb0EZWY/I1jYlWEZ9bFos442TUti27tdPDYYd8shIKhU/m9YpSMTetaTDFb\nQyLWkMg/93jKMsUrnSnMZnP38brklkxy+lIs7qxd1DkcpxqDT5VOTeZs1CU9FHD0\nmCxELP58usKghd1QCqSBNICruOdyp+//FvEXiKllaQKBgQD4M0zwzSJ+WQ9+J5gY\nczI9iV+6DHvI7N0UMRiGDoZhi8/2+sjceR8igCNRc/8LQPpGoIpy0kdqhMTzVUjV\nZprlVQDtWWKfg4KC/bjmeUAFMrQoFTsD460wcSyXsv3jv60VgRBemoRPyRgSxYwf\niTW31l+UGg/IzhkhN7Kb9zfMwwKBgQDCfqWFVkXIATnZXYaUEBN6ZE4fSxe7n3XR\nf5/bVm4tazVa5KedDvSqwKDwGg1rKofagax6GjplsYMpuTzGQ+k7E1KFshO6Z7IR\nUZq+qzeX4DKdlhNdOImHkVQJw8cXkCqs9lhutFEZJlIYGV/zWcCZ67wXf8Zu6LeW\n6HEUWBYc0wKBgF3Vv0v2sgjEkPfn7jeoLaFYM2m6WH4xFrAQk63zBdkRK7G7RH8e\nB6hae3/K8+yER1q2TUF1wGxD/9XjM2MCpKL5TR1uwrt907TESchQpOSSM8xHooUo\n6Yw77Vj44cXd7IkJv2+UyVsEsuY962jszfNPx9jNNZR8XsHRNeSDRYRTAoGBAJRL\n4IUEPPy9ApDcIOrwPwnJRU/S/+uNMFZmy0qAYk27OtltEuhMKP2xFoU8OBMIQMG4\nsfv/15sGeI3tsYsy6LikiP1rxGMTAdD2udi70A27YpyJe4ZOv35grwUrA7jRsdhj\nlRYD4vocH+hEIMb6HkK+XZJFWNXkF2e3H9F1QJcFAoGAT0h20v1bz3zr3WfSxiP5\nL36FcVNFTMQceyojom8efXoTGmsEOo0HmURnhdn27oEy0+C9p961/zJQFPITmraA\nanjmueFVDVJGycxThLWFud22uObQecn21Aa3NJFYifXkmmaKtV2VE4osE+npF6GX\nbceY/ctATDJQe/4qhwtrsMM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cedric@cshaoming-sps-summer20.iam.gserviceaccount.com",
+  "client_id": "104111793205633715025",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cedric%40cshaoming-sps-summer20.iam.gserviceaccount.com"
+}

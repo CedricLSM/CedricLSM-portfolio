@@ -14,6 +14,9 @@
 
 package com.google.sps.servlets;
 
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -36,11 +39,6 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // String json = convertToJson(messages);
-    // response.setContentType("text/html;");
-    // response.getWriter().println("<h1>Hello Cedric!</h1>");
-    // String json = convertToJson(history);
-
     // New Query instance to load Comment entity
     Query query = new Query("Comment");
 
@@ -83,22 +81,4 @@ public class DataServlet extends HttpServlet {
     // Redirect back to the HTML page.
     response.sendRedirect("/index.html");
   }
-
-  /**
-   * Converts a ServerStats instance into a JSON string using manual String concatentation.
-   */
-    private String convertToJson(ArrayList<String> history) {
-        String json = "{";
-        json += "\"history\": ";
-        json += "\"" + history + "\"";
-        // json += ", ";
-        // json += "\"message_2\": ";
-        // json += "\"" + messages.get(1) + "\"";
-        // json += ", ";
-        // json += "\"message_3\": ";
-        // json += "\"" + messages.get(2) + "\"";
-        json += "}";
-        return json;
-  }
-
 }

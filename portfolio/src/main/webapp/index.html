@@ -4,115 +4,89 @@
     <meta charset="UTF-8">
     <title>Cedric's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
     <script src="script.js"></script>
   </head>
 
-  <body onload="getComments()">
+<body onload="getComments()">
+<div class="container demo">
+<div class="content">
+<div id="large-header" class="large-header">
+<canvas id="demo-canvas"></canvas>
+
+<div class="box">
+    <!-- <img src="ced.jpg" alt="" class="box-img"> -->
+    <h1>Cedric Lee</h1>
+    <h5>Software Engineering Enthusiast</h5>
+    <p>
+        Hi there! I am an incoming penultimate Information Systems student at Singapore Management University.
+        I have a strong interest in Software engineering and machine learning. Currently expanding on my interests
+        through Google's SPS program and personal projects.
+    </p>
+    <ul>
+        <li><a href="https://github.com/CedricLSM"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/cedriclsm/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+    </ul>
+</div>
+
+<div id="projects">
+    <h1>Projects</h1>
+    <h2>To be added!</h2>
+</div>
+<div id="random">
+    <h1>SPS-Related!</h1>
+    <h2>In this section, I display some of the stuffs I have been learning from my time at SPS!</h2>
+    <h3>Personal Interests</h3>
+    <p>
+        I am interested in weightlifting and watching NBA matches! Really love travelling as well, do click the below
+        button to view random photos that I took while travelling in previous years.
+        <p>Click <button onclick="randomizeImage()">here!</button></p>
+        <div id="random-image-container"></div>
+    </p>
+
     <div id="content">
-      <h1>Hello There!</h1>
-        <p>
-            Thank you for checking this page out. My name is Cedric, an incoming penultimate student at 
-            Singapore Management Unviersity (SMU). I graduated from Ngee Ann Polytechnic with a Business Diploma 
-            and ventured into this field of studies as I have been intrigued by technology since a young age. It 
-            ended up being an excellent decision as I enjoy exploring commonly used technologies and applying it 
-            in an academic and exploratory setting.
-        </p>
-      <h2><u>About Me</u></h2>
-      <h3>Education</h3>
-        <p>
-          <ul>
-              <li>
-                <b>Singapore Management University - Information Systems (Majors in Software Development & Business Analytics): </b>
-                    I am on track to graduate with a grade of Summa Cum Laude (With highest distinction). Also, I received a place in the 
-                    Dean's List for AY 2018/2019.
-              </li>
-              <p> </p>
-              <li>
-                <b>Ngee Ann Polytechnic - Business Studies</b>
-              </li>
-           </ul>
-        </p>
-      <h3>Experiences</h3>
-        <p>
-          <ul>
-              <li>
-                <b>Google - Software Product Sprint: </b>
-                    I am currently participating in Google's invitation-only Software Product Sprint program, where I get 
-                    to learn more about software engineering best practices, work on projects (both personal and in a group) 
-                    and we get to practice our technical interviewing skills too, all activities are done under the guidance 
-                    of helpful Google engineers as our mentors!
-              </li>
-              <p> </p>
-              <li>
-                  <b>Singtel - Business Analyst Intern: </b>
-                    I am currently doing an internship at Singtel as a Business Analyst, where my main responsibilities 
-                    are to gather requirements and set up data pipelines with an automated push from different data
-                    sources. 
-              </li>
-           </ul>
-        </p>
-
-      <h3>Co-Curricular Activities</h3>
-        <p>
-          <ul>
-              <li>
-                <b>SMU - Data Associate in Business Intelligence & Analytics Club: </b>
-                    Over the course of 4 months, we learned about various data science topics through peer teaching. I
-                    taught about the topic of regression to 50 other associates. Also, I worked in a team of 4 to create
-                    a script which automates the booking of facilities in SMU and provides different analytics of booking
-                    usage.
-              </li>
-              <p> </p>
-              <li>
-                <b>SMU - Project Ketnoi 3: </b>
-                    This was an Overseas Community Service Project and I was the head of the fundraising team. We managed
-                    to raise S$6,000 through our fundraising event. The funds were used to purchase second-hand laptops
-                    for students in a secondary school in Hue, Vietnam. The team then flew over to teach the students
-                    basic programming knowledge and it was a very enriching experience as we saw their progress throughout
-                    the curriculum we developed for them! 
-              </li>
-           </ul>
-        </p>
-
-      <h3>Personal Interests</h3>
-        <p>
-            I am interested in weightlifting and watching NBA matches! Really love travelling as well, do click the below
-            button to view random photos that I took while travelling in previous years.
-            <p>Click <button onclick="randomizeImage()">here!</button></p>
-            <div id="random-image-container"></div>
-        </p>
-
-      <h2><u>Check me out on:</ul></h2>
-        <a href="https://github.com/CedricLSM">
-        <img src="images/github-mark.png"
-        width="80" height="80">
-        </a>
-        &nbsp;&nbsp;
-        <a href="https://www.linkedin.com/in/cedric-lee-404666192/">
-        <img src="images/linkedin.png"
-        width="80" height="80">
-        </a>
-        <p> </p>
-      <div id="content">
-        <h2>Random Quotes</h2>
-        <p>Click here to see a random quote:</p>
-        <button onclick="getRandomQuoteUsingAsyncAwait()">Fetch a quote!</button>
-        <div id="quote-container"></div>
-      </div>
-
-      <h2>Here are some messages for you</h2>
-      <p>Click on the button to receive it:</p>
-      <button onclick="getMessages()">Click Me!</button>
-      <ul id="messages-container"></ul>
-
-      <form action="/data" method="POST">
-        <p>Leave a message:</p>
-        <input type="text" name="user-comment">
-        <br/><br/>
-        <input type="submit" />
-      </form>
-
-      <ul id="history"></ul>
+    <h3>Random Quotes</h3>
+    <p>Click here to see a random quote:</p>
+    <button onclick="getRandomQuoteUsingAsyncAwait()">Fetch a quote!</button>
+    <div id="quote-container"></div>
     </div>
-  </body>
+
+    <h3>Here are some messages for you</h3>
+    <p>Click on the button to receive it:</p>
+    <button onclick="getMessages()">Click Me!</button>
+    <ul id="messages-container"></ul>
+
+    <form action="/data" method="POST">
+    <p><h3>Leave a message:</h3></p>
+    <input type="text" name="user-comment">
+    <br/><br/>
+    <input type="submit" />
+    </form>
+
+    <ul id="history"></ul>
+
+    <h3>Translation</h3>
+    <p>Type a message and select a language, then click submit to translate it.</p>
+
+    <textarea id="text"></textarea>
+
+    <select id="language">
+      <option value="zh">Chinese</option>
+      <option value="es">Spanish</option>
+      <option value="hi">Hindi</option>
+      <option value="ar">Arabic</option>
+    </select>
+
+    <button onclick="requestTranslation();">Translate</button>
+    <hr/>
+    <div id="result"></div>
+    </div>
+
+</div>
+</div>
+</div>
+</body>
 </html>
