@@ -56,6 +56,19 @@ function getMessages() {
   });
 }
 
+/**
+ * Fetches the current comments and show it on the page.
+ */
+function getComments() {
+  fetch('/data').then(response => response.json()).then((allComments) => {
+    // Build the list of history entries.
+    const historyEl = document.getElementById('history');
+    allComments.forEach((line) => {
+      historyEl.appendChild(createListElement(line));
+    });
+  });
+}
+
 /** Creates an <li> element containing text. */
 function createListElement(text) {
   const liElement = document.createElement('li');
