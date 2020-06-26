@@ -14,6 +14,9 @@
 
 package com.google.sps.servlets;
 
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -64,6 +67,7 @@ public class DataServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
     String userComment = request.getParameter("user-comment").trim();
+
 
     // Input validation.
     if (userComment.length() <= 3) {
